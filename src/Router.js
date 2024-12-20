@@ -1,7 +1,8 @@
-import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import MainPage from './pages/MainPage';  // Updated path
-import DestinationPage from './pages/DestinationPage'; // Another page for detailed destination info
+import React from 'react'; 
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'; 
+import MainPage from './pages/MainPage'; 
+import DestinationPage from './pages/DestinationPage'; 
+import TravelPlanPage from './pages/TravelPlanPage'; // Import TravelPlanPage
 
 const AppRouter = () => {
     return (
@@ -9,6 +10,7 @@ const AppRouter = () => {
             <Routes>
                 <Route path="/" element={<MainPage />} />
                 <Route path="/destination/:id" element={<DestinationPage />} />
+                <Route path="/travel-plan" element={<TravelPlanPage />} /> {/* Add route for TravelPlanPage */}
             </Routes>
         </Router>
     );
