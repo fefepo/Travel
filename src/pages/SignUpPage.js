@@ -88,6 +88,7 @@ const SignUpPage = () => {
           <input
             type="checkbox"
             checked={termsAccepted}
+            
             onChange={(e) => setTermsAccepted(e.target.checked)}
           />
           <label>이용약관 및 개인정보 수집 및 정보이용에 동의합니다.</label>
