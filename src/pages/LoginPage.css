@@ -72,32 +72,42 @@ body {
 
 /* Success Message Styling */
 .success-message {
-  background-color: #5bb3e5; /* Green background */
+  background-color: #5bb3e5;
   color: white;
-  font-size: 2rem !important; /* 글자 크기를 3배로 지정 */
-  padding: 15px; /* 적절한 패딩 추가 */
+  font-size: 2rem !important;
+  padding: 15px;
   border-radius: 5px;
   margin-bottom: 20px;
   font-weight: bold;
   display: inline-block;
   text-align: center;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 10;
+  position: relative;
+  z-index: 1; /* 비행기보다 뒤에 위치 */
 }
 
-/* Add fade-in animation */
-@keyframes fadeIn {
+/* Plane Animation */
+.plane-container {
+  position: relative;
+  width: 100%;
+  height: 150px; /* 비행기 이미지 높이를 감쌀 컨테이너 */
+  overflow: visible; /* 비행기 이미지가 잘리지 않도록 설정 */
+  margin-bottom: -50px; /* 메시지와 비행기 간격 조정 */
+  z-index: 2; /* 성공 메시지보다 앞에 위치 */
+}
+
+.plane-animation {
+  position: absolute;
+  top: 0; /* 비행기를 컨테이너 상단에 배치 */
+  left: -100px; /* 시작 위치: 화면 왼쪽 바깥 */
+  width: 100px; /* 비행기 이미지 크기 */
+  animation: flyPlane 5s linear infinite; /* 5초 동안 애니메이션 반복 */
+}
+
+@keyframes flyPlane {
   from {
-    opacity: 0;
+    transform: translateX(-150px); /* 시작 위치: 화면 왼쪽 바깥 */
   }
   to {
-    opacity: 1;
+    transform: translateX(100vw); /* 끝 위치: 화면 오른쪽 바깥 */
   }
-}
-
-.success-message {
-  animation: fadeIn 0.5s ease-in-out;
 }

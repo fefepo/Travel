@@ -38,9 +38,18 @@ const LoginPage = () => {
 
       {/* Show success message */}
       {successMessage && (
-        <div className="success-message">
-          <p>{successMessage}</p>
-        </div>
+        <>
+          <div className="success-message">
+            <p>{successMessage}</p>
+          </div>
+          <div className="plane-container">
+            <img
+              src="/airplane.png" // 이미지 파일은 public/plane.png 경로에 있어야 합니다.
+              alt="Plane animation"
+              className="plane-animation"
+            />
+          </div>
+        </>
       )}
 
       <form onSubmit={handleLogin}>
