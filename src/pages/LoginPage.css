@@ -1,179 +1,103 @@
 /* General Styles */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
-    color: #333;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+/* Login Page Styling */
+.login-page {
+  max-width: 500px;
+  margin: 60px auto;
+  padding: 40px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  position: relative;
+}
+
+.login-page h2 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #333333;
+  margin-bottom: 20px;
+}
+
+.login-page input {
+  width: 100%;
+  padding: 12px;
+  margin: 15px 0;
+  border: none;
+  border-bottom: 1px solid #ddd;
+  font-size: 1rem;
+  outline: none;
+}
+
+.login-page input:focus {
+  border-bottom: 2px solid #007bff;
+}
+
+.login-page button {
+  width: 100%;
+  padding: 15px;
+  background-color: #cccccc; /* Default gray when disabled */
+  color: #ffffff;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: not-allowed;
+  margin-top: 20px;
+  transition: background-color 0.3s ease;
+}
+
+.login-page button:enabled {
+  background-color: #007bff; /* Blue when enabled */
+  cursor: pointer; /* Change cursor to pointer when enabled */
+}
+
+.login-page button:hover:enabled {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+.error {
+  color: red;
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+/* Success Message Styling */
+.success-message {
+  background-color: #5bb3e5; /* Green background */
+  color: white;
+  font-size: 2rem !important; /* 글자 크기를 3배로 지정 */
+  padding: 15px; /* 적절한 패딩 추가 */
+  border-radius: 5px;
+  margin-bottom: 20px;
+  font-weight: bold;
+  display: inline-block;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+}
+
+/* Add fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
   }
-  
-  /* Login Page Styling */
-  .login-page {
-    max-width: 500px;
-    margin: 60px auto;
-    padding: 40px;
-    background-color: #ffffff;
-    border-radius: 12px;
-    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
-    text-align: center;
+  to {
+    opacity: 1;
   }
-  
-  .login-page h2 {
-    font-size: 1.8rem;
-    font-weight: bold;
-    color: #333333;
-    margin-bottom: 20px;
-  }
-  
-  .login-page input {
-    width: 100%;
-    padding: 12px;
-    margin: 15px 0;
-    border: none;
-    border-bottom: 1px solid #ddd;
-    font-size: 1rem;
-    outline: none;
-  }
-  
-  .login-page input:focus {
-    border-bottom: 2px solid #007bff;
-  }
-  
-  .login-page button {
-    width: 100%;
-    padding: 15px;
-    background-color: #cccccc; /* Default gray when disabled */
-    color: #ffffff;
-    font-size: 1.2rem;
-    font-weight: bold;
-    border: none;
-    border-radius: 8px;
-    cursor: not-allowed;
-    margin-top: 20px;
-    transition: background-color 0.3s ease;
-  }
-  
-  .login-page button:enabled {
-    background-color: #007bff; /* Blue when enabled */
-    cursor: pointer; /* Change cursor to pointer when enabled */
-  }
-  
-  .login-page button:hover:enabled {
-    background-color: #0056b3; /* Darker blue on hover */
-  }
-  
-  .error {
-    color: red;
-    font-size: 0.9rem;
-    margin-bottom: 10px;
-    text-align: center;
-  }
-  
-  /* Success Message Styling */
-  .success-message {
-    background-color: #4189c4; /* Green background */
-    color: white;
-    font-size: 1.2rem;
-    padding: 10px;
-    border-radius: 5px;
-    margin-bottom: 20px;
-    font-weight: bold;
-    display: inline-block;
-    text-align: center;
-    width: 100%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%); /* Center success message */
-  }
-  
-  /* Main Page Styling */
-  .main-container {
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-  }
-  
-  .header {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 20px 0;
-  }
-  
-  .header h1 {
-    margin: 0;
-  }
-  
-  .main-content {
-    flex: 1;
-    padding: 20px;
-  }
-  
-  .search-section {
-    display: flex;
-    justify-content: center;
-    padding: 20px;
-  }
-  
-  #search-bar {
-    padding: 10px;
-    font-size: 16px;
-    width: 300px;
-    border-radius: 5px;
-    border: 1px solid #ddd;
-  }
-  
-  button {
-    padding: 10px 20px;
-    font-size: 16px;
-    background-color: #333;
-    color: white;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-    margin-left: 10px;
-  }
-  
-  button:hover {
-    background-color: #555;
-  }
-  
-  .destinations {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 20px;
-    padding: 20px;
-  }
-  
-  .destination {
-    background-color: white;
-    border-radius: 10px;
-    padding: 20px;
-    width: 200px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
-  }
-  
-  .destination h3 {
-    margin: 0;
-    font-size: 24px;
-    color: #333;
-  }
-  
-  .destination p {
-    font-size: 16px;
-    color: #777;
-  }
-  
-  .footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 10px 0;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-  }
-  
+}
+
+.success-message {
+  animation: fadeIn 0.5s ease-in-out;
+}

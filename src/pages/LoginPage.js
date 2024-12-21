@@ -13,12 +13,15 @@ const LoginPage = () => {
 
   const handleLogin = async (e) => {
     e.preventDefault();
+    setError(''); // Clear previous errors
+    setSuccessMessage(''); // Clear previous success messages
 
     try {
       await signInWithEmailAndPassword(auth, email, password);
       setSuccessMessage('Enjoy your trip!'); // Display success message
       setTimeout(() => navigate('/'), 2000); // Redirect to home page after 2 seconds
     } catch (error) {
+      // Handle errors with specific messages
       if (error.code === 'auth/wrong-password') {
         setError('Incorrect password. Please try again.');
       } else if (error.code === 'auth/user-not-found') {
@@ -33,7 +36,7 @@ const LoginPage = () => {
     <div className="login-page">
       <h2>Login</h2>
 
-      {/* Show success message in the center of the screen */}
+      {/* Show success message */}
       {successMessage && (
         <div className="success-message">
           <p>{successMessage}</p>
