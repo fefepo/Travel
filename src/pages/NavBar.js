@@ -21,7 +21,7 @@ const NavBar = () => {
     const auth = getAuth();
     try {
       await signOut(auth); // Sign out the user
-      setLogoutMessage('로그아웃 되었습니다.'); // Set the logout message
+      setLogoutMessage('logged out'); // Set the logout message
       setShowMessage(true); // Show the logout message
     } catch (error) {
       console.error('Error signing out: ', error);
@@ -39,7 +39,7 @@ const NavBar = () => {
       <ul className="nav-links">
         <li>
           <Link to="/travel-plan">
-            <button className="navbar-button">여행 계획</button>
+            <button className="navbar-button">Travel plan</button>
           </Link>
         </li>
       </ul>
@@ -48,7 +48,7 @@ const NavBar = () => {
           // Show logout button if the user is logged in
           <li>
             <button className="navbar-button" onClick={handleLogout}>
-              로그아웃
+              Logout
             </button>
           </li>
         ) : (
@@ -56,12 +56,12 @@ const NavBar = () => {
           <>
             <li>
               <Link to="/login">
-                <button className="navbar-button">로그인</button>
+                <button className="navbar-button">Login</button>
               </Link>
             </li>
             <li>
               <Link to="/signup">
-                <button className="navbar-button">회원가입</button>
+                <button className="navbar-button">Sign Up</button>
               </Link>
             </li>
           </>
@@ -72,7 +72,7 @@ const NavBar = () => {
         <div className="logout-message-container">
           <p className="logout-message">{logoutMessage}</p>
           <button className="confirm-button" onClick={handleConfirm}>
-            확인
+            check
           </button>
         </div>
       )}

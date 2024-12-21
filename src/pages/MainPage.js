@@ -26,8 +26,9 @@ const MainPage = () => {
   };
 
   // Function to handle pressing the Enter key
-  const handleKeyPress = (e) => {
+  const handleKeyDown = (e) => {
     if (e.key === 'Enter') {
+      e.preventDefault(); // Prevent the default form submission behavior (if any)
       handleSearch(); // Trigger search when Enter key is pressed
     }
   };
@@ -48,13 +49,12 @@ const MainPage = () => {
             placeholder="Search for destinations..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)} // Update state as user types
-            onKeyPress={handleKeyPress} // Trigger search when pressing Enter key
+            onKeyDown={handleKeyDown} // Trigger search when pressing Enter key
           />
           <button onClick={handleSearch}>Search</button>
         </section>
 
         <section className="destinations">
-          <h2>Recommended Destinations</h2>
           <div className="destination" id="destination1">
             <h3>
               <Link to="/destination/1">Paris</Link>
