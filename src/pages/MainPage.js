@@ -18,6 +18,7 @@ const MainPage = () => {
   const handleSearch = () => {
     const lowerCaseQuery = searchQuery.toLowerCase().trim(); // Standardize the query
     if (destinations[lowerCaseQuery]) {
+      
       navigate(destinations[lowerCaseQuery]); // Redirect if the destination exists
       setSearchQuery(''); // Optionally clear the search input after redirection
     } else {
