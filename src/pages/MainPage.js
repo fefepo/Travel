@@ -1,24 +1,24 @@
 import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom'; // Import useNavigate for redirection
-import NavBar from '../pages/NavBar'; // Import NavBar component
+import { useNavigate, Link } from 'react-router-dom';
+import NavBar from '../pages/NavBar';
 import './MainPage.css';
 
 const MainPage = () => {
   const [searchQuery, setSearchQuery] = useState(''); // State to store search query
   const navigate = useNavigate(); // Hook to navigate to a specific URL
 
-  // Define a map for destinations
+  // Updated destinations map
   const destinations = {
-    paris: '/destination/1',
-    tokyo: '/destination/2',
-    'new york': '/destination/3'
+    paris: '/destination/paris',
+    tokyo: '/destination/tokyo',
+    'new york': '/destination/new york',
+    // Add more cities if needed
   };
 
   // Function to handle search
   const handleSearch = () => {
     const lowerCaseQuery = searchQuery.toLowerCase().trim(); // Standardize the query
     if (destinations[lowerCaseQuery]) {
-      
       navigate(destinations[lowerCaseQuery]); // Redirect if the destination exists
       setSearchQuery(''); // Optionally clear the search input after redirection
     } else {
@@ -58,19 +58,19 @@ const MainPage = () => {
         <section className="destinations">
           <div className="destination" id="destination1">
             <h3>
-              <Link to="/destination/1">Paris</Link>
+              <Link to="/destination/paris">Paris</Link>
             </h3>
             <p>Explore the city of love!</p>
           </div>
           <div className="destination" id="destination2">
             <h3>
-              <Link to="/destination/2">Tokyo</Link>
+              <Link to="/destination/tokyo">Tokyo</Link>
             </h3>
             <p>Experience the blend of tradition and modernity.</p>
           </div>
           <div className="destination" id="destination3">
             <h3>
-              <Link to="/destination/3">New York</Link>
+              <Link to="/destination/new york">New York</Link>
             </h3>
             <p>The city that never sleeps.</p>
           </div>
